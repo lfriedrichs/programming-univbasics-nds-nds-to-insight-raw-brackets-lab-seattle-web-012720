@@ -6,15 +6,15 @@ def directors_totals(nds)
   # that you know what you're starting with!
   # The Hash result be full of things like "Jean-Pierre Jeunet" => "222312123123"
   result = {}
-  index = 0
-  while nds[index]
-    total = 0 
-    count = 0
-    while nds[index][:movies][count]
-      total += nds[index][:movies][count][:worldwide_gross]
+  director = 0
+  while nds[director]
+    total_gross = 0 
+    movie = 0
+    while nds[director][:movies][movie]
+      total_gross += nds[director][:movies][movie][:worldwide_gross]
       count += 1
     end
-    result[nds[index][:name]] = total
+    result[nds[director][:name]] = total_gross
     index += 1
   end
   result
